@@ -1,3 +1,5 @@
+import numpy as np
+
 def generate_random_colorlist(n):
     rgb = []
     for i in range(0, n):

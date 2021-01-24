@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def generate_random_colorlist(n):
     rgb = []
@@ -30,3 +31,15 @@ def print_missing_values(df, categories):
     """
     for category in categories:
         print(df[category].isnull().value_counts(),"\n")
+
+def create_dummy_variables(df, dummy_categories=None):
+    if (dummy_categories):
+        cat_vars = dummy_categories
+    else:
+        # Dummy the categorical variables
+        cat_vars = df.select_dtypes(include=['object']).copy().columns
+    for var in  cat_vars:
+        # for each cat add dummy var, drop original column
+        df = pd.concat([df.drop(var, axis=1), pd.get_dummies(df[var], prefix=var, prefix_sep='_', drop_first=True)], axis=1)
+    
+    return df

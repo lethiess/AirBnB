@@ -1,3 +1,2 @@
 data/* filter=lfs diff=lfs merge=lfs -text
 data/munich/* filter=lfs diff=lfs merge=lfs -text
-data/berlin/* filter=lfs diff=lfs merge=lfs -text

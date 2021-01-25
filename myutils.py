@@ -2,6 +2,15 @@ import numpy as np
 import pandas as pd
 
 def generate_random_colorlist(n):
+    """
+    Create a list of n random rbg-colors.
+    
+    Args:
+    n: number of desired colors
+    
+    return:
+    List with n random generated colors
+    """
     rgb = []
     for i in range(0, n):
         rgb.append(np.random.rand(3,))
@@ -9,6 +18,15 @@ def generate_random_colorlist(n):
     
     
 def find_categories_w_missing_values(df):
+    """
+    Find columns with missing values.
+    
+    Args:
+    df: pandas dataframe
+    
+    return:
+    List containing names of columns with missing values.
+    """
     categories_w_mising_values = [] 
     for category in df.columns:
         if not df[category].isnull().values.any():
@@ -20,19 +38,33 @@ def find_categories_w_missing_values(df):
     return categories_w_mising_values
     
     
-# count missing values
 def print_missing_values(df, categories):
-    """ Args:
-        df: 
-        categories:
+    """ 
+    Print categories with missing values.
+    
+    Args:
+        df: pandas dataframe 
+        categories: list of columns \w missing values
         
-        return:
+    return:
         none
     """
     for category in categories:
         print(df[category].isnull().value_counts(),"\n")
 
+
 def create_dummy_variables(df, dummy_categories=None):
+    """
+    Create dummy variables. This is a preprocessing step for e.g. linear regression.
+    
+    
+    Args:
+    df: pandas dataframe
+    dummy_categories: categories where dummy variables are nedded 
+    
+    return:
+    dataframe with dummy variables    
+    """
     if (dummy_categories):
         cat_vars = dummy_categories
     else:

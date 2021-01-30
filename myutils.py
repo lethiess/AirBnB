@@ -18,25 +18,28 @@ def generate_random_colorlist(n):
     return rgb
 
 
-def find_categories_w_missing_values(df):
+def find_categories_w_missing_values(df, print_values=True):
     """
     Find columns with missing values.
 
     Args:
     df: pandas dataframe
+    print_values: Flag of enable/disable output with print
 
     return:
     List containing names of columns with missing values.
     """
     categories_w_mising_values = []
     for category in df.columns:
-        if not df[category].isnull().values.any():
+        if not df[category].isnull().values.any() and print_values:
             print("No missing values in " + category)
         else:
-            print("\033[1m" + "Missing values in " + category + "\033[0m")
+            if print_values:
+                print("\033[1m" + "Missing values in " + category + "\033[0m")
             categories_w_mising_values.append(category)
-    print("\033[1m" + "\nThere are", len(categories_w_mising_values),
-          "categories with missing values" + "\033[0m")
+    if print_values:
+        print("\033[1m" + "\nThere are", len(categories_w_mising_values),
+              "categories with missing values" + "\033[0m")
     return categories_w_mising_values
 
 
@@ -45,11 +48,11 @@ def print_missing_values(df, categories):
     Print categories with missing values.
 
     Args:
-        df: pandas dataframe
-        categories: list of columns \w missing values
+    df: pandas dataframe
+    categories: list of columns \w missing values
 
     return:
-        none
+    none
     """
     for category in categories:
         print(df[category].isnull().value_counts(), "\n")

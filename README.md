@@ -16,7 +16,7 @@ To run the Juptyer Note properly a installation of Anaconda is recommended.
 
 [Install Jupyter without Anaconda](https://jupyter.org/install)
 
-Additionally the following python package is used:
+Additionally the following non standard python package is used:
 
 [Install folium](https://python-visualization.github.io/folium/installing.html#installation)
 

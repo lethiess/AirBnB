@@ -43,7 +43,7 @@ The folder data/munich/ includes all necessary datasets.
 
 ## Results<a name="results"></a>
 
-The main findings of the code can be found at the post available [here]().
+The main findings of the code can be found at the post available [here](https://lethiess.medium.com/discovering-munichs-airbnb-situation-4dd00c0f3e23).
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 

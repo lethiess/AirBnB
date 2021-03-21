@@ -10,7 +10,7 @@
 
 ## Installation <a name="installation"></a>
 
-To run the Juptyer Note properly a installation of Anaconda is recommended.
+To run the Juptyer Note a proper installation of Anaconda is recommended.
 
 [Install Anaconda](https://www.anaconda.com/products/individual#Downloads)
 
